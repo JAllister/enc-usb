@@ -1,7 +1,7 @@
 ;******************** (C) COPYRIGHT 2016 STMicroelectronics ********************
 ;* File Name          : startup_stm32f746xx.s
 ;* Author             : MCD Application Team
-;* Version            : V1.1.0
+;* Version            : V1.0.3
 ;* Date               : 22-April-2016
 ;* Description        : STM32F746xx devices vector table for MDK-ARM toolchain. 
 ;*                      This module performs:
@@ -56,7 +56,7 @@ __initial_sp
 ;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
 ; </h>
 
-Heap_Size      EQU     0x400
+Heap_Size      EQU     0x200
 
                 AREA    HEAP, NOINIT, READWRITE, ALIGN=3
 __heap_base
@@ -345,12 +345,12 @@ Default_Handler PROC
                 EXPORT  DMA2D_IRQHandler                  [WEAK]
                 EXPORT  SAI2_IRQHandler                   [WEAK]   
                 EXPORT  QUADSPI_IRQHandler                [WEAK]
-                EXPORT  LPTIM1_IRQHandler                 [WEAK]
+				EXPORT  LPTIM1_IRQHandler                 [WEAK]
                 EXPORT  CEC_IRQHandler                    [WEAK]   
                 EXPORT  I2C4_EV_IRQHandler                [WEAK]
-                EXPORT  I2C4_ER_IRQHandler                [WEAK] 
+				EXPORT  I2C4_ER_IRQHandler                [WEAK] 
                 EXPORT  SPDIF_RX_IRQHandler               [WEAK]
-                
+				
 WWDG_IRQHandler                                                       
 PVD_IRQHandler                                      
 TAMP_STAMP_IRQHandler                  
